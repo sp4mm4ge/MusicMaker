@@ -1,4 +1,4 @@
 author = Sp4mm4ge
-version = 0.1.0.0
+version = 0.1.1.0
 displayName = Music Maker
 homepage = https://github.com/sp4mm4ge/MusicMaker/wiki
