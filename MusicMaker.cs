@@ -44,6 +44,8 @@ namespace MusicMaker
 					byte bass = reader.ReadByte();
 					int i = reader.ReadInt32();
 					int j = reader.ReadInt32();
+					if(notesActive >= 10)
+						return;
 					for(int x=0;x<notesActive;x++){
 						if(noteStart[x] == (i-1) && curTileY[x] == (j-1))
 							return;
@@ -150,10 +152,6 @@ namespace MusicMaker
 		}
 
 
-		//Bell and Music Box creates bass note tiles.
-		//Harp and Music Box creates trebel note tiles.
-
-		//Watches control tempo
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(this);

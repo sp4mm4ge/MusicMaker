@@ -28,7 +28,7 @@ namespace MusicMaker.Items.Tiles
 		public override void HitWire(int i, int j)
 		{
 			if(!Main.dedServ){
-				if(MusicMaker.musicPlaying)
+				if(MusicMaker.musicPlaying || MusicMaker.notesActive >= 10)
 					return;
 				MusicMaker.tempo = 120;
 				MusicMaker.curTileX[MusicMaker.notesActive] = i-1;
