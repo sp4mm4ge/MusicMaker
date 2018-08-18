@@ -20,7 +20,7 @@ namespace MusicMaker.Items.Tiles
         	//  TileObjectData.newTile.UsesCustomCanPlace = true;
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
-			name.SetDefault("D# Note");
+			name.SetDefault("DS Note");
 			AddMapEntry(new Color(50, 50, 200),name);
 			//SetModTree(new ExampleTree());
 		}
@@ -28,6 +28,19 @@ namespace MusicMaker.Items.Tiles
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(i * 16, j * 16, 32, 32, mod.ItemType("Note_DS"));
+		}
+
+		public override void RightClick(int i, int j) 	{
+			Tile tile = Main.tile[i,j];
+			int x = i-tile.frameX/18;
+			int y = j-tile.frameY/18;
+			Main.tile[x,y].type = (ushort)mod.TileType("Note_DS_Up");
+			Main.tile[x+1,y].type = (ushort)mod.TileType("Note_DS_Up");
+			Main.tile[x,y+1].type = (ushort)mod.TileType("Note_DS_Up");
+			Main.tile[x+1,y+1].type = (ushort)mod.TileType("Note_DS_Up");
+			MusicMaker.isHigh = true;
+			MusicMaker.isLow = false;
+			Main.PlaySound(mod.GetLegacySoundSlot(SoundType.Custom, "Sounds/DS")); 
 		}
 	}
 }

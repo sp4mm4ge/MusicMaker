@@ -1,1 +1,6 @@
 Create your own music in Terraria using note blocks! Check out the webpage for a tutorial.
+
+Changes: 
+Version 0.1.2
+3 octaves are now available! After placing a tile, right-click the tile to change octaves. 
+The higher octave turns the tile green and the lower octave turns the tile red.

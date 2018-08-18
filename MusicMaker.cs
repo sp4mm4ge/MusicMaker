@@ -27,7 +27,8 @@ namespace MusicMaker
 		public static int tempo = 0;
 		public static Stopwatch timer;
 		public static bool musicPlaying = false;
-
+		public static bool isHigh = false;
+		public static bool isLow = false;
 
 		public override void PreSaveAndQuit(){
 			musicPlaying = false;
@@ -82,30 +83,186 @@ namespace MusicMaker
 				int tile = Main.tile[curTileX[x], curTileY[x]]==null?-1:Main.tile[curTileX[x], curTileY[x]].type;
 				bool nextnote = true;
 				string note = null;
-				if(tile == TileType("Note_A"))
+				if(tile == TileType("Note_A")){
 					note = "A";
-				else if(tile == TileType("Note_AS"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_A_Up")){
+					note = "A";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_A_Down")){
+					note = "A";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_AS")){
 					note = "AS";
-				else if(tile == TileType("Note_B"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_AS_Up")){
+					note = "AS";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_AS_Down")){
+					note = "AS";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_B")){
 					note = "B";
-				else if(tile == TileType("Note_C"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_B_Up")){
+					note = "B";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_B_Down")){
+					note = "B";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_C")){
 					note = "C";
-				else if(tile == TileType("Note_CS"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_C_Up")){
+					note = "C";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_C_Down")){
+					note = "C";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_CS")){
 					note = "CS";
-				else if(tile == TileType("Note_D"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_CS_Up")){
+					note = "CS";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_CS_Down")){
+					note = "CS";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_D")){
 					note = "D";
-				else if(tile == TileType("Note_DS"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_D_Up")){
+					note = "D";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_D_Down")){
+					note = "D";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_DS")){
 					note = "DS";
-				else if(tile == TileType("Note_E"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_DS_Up")){
+					note = "DS";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_DS_Down")){
+					note = "DS";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_E")){
 					note = "E";
-				else if(tile == TileType("Note_F"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_E_Up")){
+					note = "E";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_E_Down")){
+					note = "E";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_F")){
 					note = "F";
-				else if(tile == TileType("Note_FS"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_F_Up")){
+					note = "F";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_F_Down")){
+					note = "F";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_FS")){
 					note = "FS";
-				else if(tile == TileType("Note_G"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_FS_Up")){
+					note = "FS";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_FS_Down")){
+					note = "FS";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_G")){
 					note = "G";
-				else if(tile == TileType("Note_GS"))
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_G_Up")){
+					note = "G";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_G_Down")){
+					note = "G";
+					isHigh = false;
+					isLow = true;
+				}
+				else if(tile == TileType("Note_GS")){
 					note = "GS";
+					isHigh = false;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_GS_Up")){
+					note = "GS";
+					isHigh = true;
+					isLow = false;
+				}
+				else if(tile == TileType("Note_GS_Down")){
+					note = "GS";
+					isHigh = false;
+					isLow = true;
+				}
 				else if(tile == TileType("Note_K"))
 					note = "K";
 				else if(tile == TileType("Note_S"))

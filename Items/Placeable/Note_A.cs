@@ -28,6 +28,14 @@ namespace MusicMaker.Items.Placeable
 			item.createTile = mod.TileType("Note_A");
 		}
 
+		public override bool UseItem(Player player){
+			if(!MusicMaker.musicPlaying){
+				MusicMaker.isHigh = false;
+				MusicMaker.isLow = false;
+			}
+			return false;
+		} 	
+
 	}
 }
 
